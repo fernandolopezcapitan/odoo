@@ -321,7 +321,7 @@ def load_openerp_module(module_name):
         if info['post_load']:
             getattr(sys.modules['openerp.addons.' + module_name], info['post_load'])()
 
-    except Exception, e:
+    except Exception as e:
         msg = "Couldn't load module %s" % (module_name)
         _logger.critical(msg)
         _logger.critical(e)
